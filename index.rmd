@@ -1,0 +1,28 @@
+---
+title: "Explore Distance and Speed of Cars"
+author: "anirban"
+date: "23 July 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Summary of Cars Dataset
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Speed vs Distance of The Cars
+
+```{r echo=FALSE, message=FALSE}
+library(plotly)
+d <- cars
+plot_ly(d, x = ~speed, y = ~dist, color = ~speed,
+         size = ~speed, text = ~paste("Speed: ", speed))
+```
+
+## Thank You
